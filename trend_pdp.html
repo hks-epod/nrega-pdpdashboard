@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<title>MGNREGA Public Data Portal</title>
+</head>
+
+<style>
+
+/* CSS goes here. */
+body {
+    background-color: white;
+    vertical-align:baseline;
+    line-height:normal;
+    padding:0;
+    margin:0;
+    background-color:rgb(250,250,250);
+    height:100%;
+
+}
+
+#main {
+    width:960px;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+    margin-bottom:50px;
+}
+
+#footer {
+    width:100%;
+    box-shadow: 0 5px 8px -5px hsla(0, 0%, 0%, 0.3);
+    left:0;
+    background-image:url('images/sos.png');
+    z-index:100;
+    height:150px;
+    margin:0;
+    padding:0;
+}
+
+#topContainer {
+    width:100%;
+    box-shadow: 0 5px 8px -5px hsla(0, 0%, 0%, 0.3);
+    top:0;
+    left:0;
+    background-image:url('images/sos.png');
+    z-index:100;
+    height:120px;
+    margin:0;
+    padding:0;
+}
+#top {
+    width: 960px;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    margin-top:0;
+    padding:0;
+    background-color:white;
+}
+#titleText1 {
+    background-color:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 26px;
+    color: rgb(80,80,80);
+    text-align:left;
+    margin-bottom:0px;
+    font-weight:300;
+    margin-top:24px;
+    display:block;
+    margin-left:25px;
+    line-height:.9;
+    padding:0;
+}
+#titleText2 {
+    background-color:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 44px;
+    color: rgb(50,50,50);
+    text-align:left;
+    margin-bottom:0px;
+    font-weight:300;
+    margin-top:8px;
+    display:block;
+    margin-left:25px;
+    line-height:.9;
+    padding:0;
+}
+#saffron {
+    height:2px;
+    width:147px;
+    margin-top:38px;
+    margin-left:170px;
+    position:absolute;
+    background-color: #ffb33b;
+    display:none;
+
+}
+#white {
+    height:2px;
+    width:80px;
+    position:absolute;
+    margin-top:37px;
+    margin-left:190px;
+    background-color: white;
+    display:none;
+}
+#green {
+    height:2px;
+    width:147px;
+    position:absolute;
+    margin-top:45px;
+    margin-left:215px;
+    background-color:#5baf6a;
+    display:none;
+}
+#brush {
+    position:absolute;
+    margin-top:26px;
+    margin-left:165px;
+}
+h1 {
+    -webkit-margin-after: 0px;
+    -webkit-margin-before:0px;
+    display:inline;
+}
+
+#linkNav {
+    font-family: Arial, sans-serif; 
+    font-weight: normal;
+    font-size: 14px;
+    float:right;
+    margin-top:33px;
+
+}
+
+
+.navItem {
+    margin-left:10px;
+    text-decoration: none;
+    color: rgb(230,230,230);
+    background-color:rgb(100,100,100);
+    padding:5px 12px 5px 12px;
+    font-weight:normal;
+    border-radius:3px;
+}
+
+.navItem:hover {
+    background-color:rgb(130,130,130);
+}
+
+.navItem:active {
+    background-color:rgb(115,115,115);
+}
+#ashoka {
+    float:left;
+    margin-top:21px;
+    width:50px;
+    height:89px;
+}
+#textcontainer {
+    float:left;
+}
+
+#epod {
+    margin-top:69px;
+    position:absolute;
+    margin-left:802px;
+    display:block;
+}
+#mord {
+    display:block;
+    margin-top:68px;
+    margin-left:637px;
+    position:absolute;
+}
+#bottom {
+    width: 960px;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    margin-top:0;
+    padding:0;
+    background-color:transparent;
+}
+#developedby {
+    font-weight:normal; font-family: Helvetica, Arial, sans-serif; font-size: 14px;
+    background-color: transparent;
+    display:block;
+    float:left;
+    margin-top:30px;
+    line-height:1.4;
+    width:450px;
+    margin-left:50px;
+}
+
+#dfidcontainer {
+    font-weight:normal; font-family: Helvetica, Arial, sans-serif; font-size: 14px;
+    background-color: transparent;
+    display:block;
+    float:right;
+    margin-top:30px;
+}
+#dfidlogo {
+    display:block;
+    margin-top:0px;
+}
+#niclogo 
+{
+    display:block;
+    margin-top:30px;
+    float:left;
+}
+#tooltipDiv {
+	color: black;
+	position:absolute;
+	pointer-events:none; 
+	cursor:default; 
+	background-color:white;
+	/*border: 1px solid rgb(150,150,150);*/
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	padding: 5px 7px 4px 7px;
+	z-index: 9999;
+	display: none;
+	line-height:140%;
+	box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+}
+#chartcontainer {
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    width:960px;
+    height:515px;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+}
+#chart1 {
+    width:715px;
+    height:515px;
+    /*margin-left:240px;*/
+    float:left;
+    border-left:1px solid rgb(200,200,200);
+}
+#chartcontrol {
+    float:left;
+    width:240px;
+    height:515px;
+}
+
+#controlDiv {
+    position:absolute;
+    left:530px;
+    top:20px;
+}
+
+
+#indicMenu, #indicForm {
+    vertical-align:top;
+    display:inline;
+    margin-top:0px;
+    margin-left:0px;
+}
+
+#dlLinks {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size:11px;
+    top:490px;
+    right:45px;
+}
+
+#helpText {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    top:525px;
+    left:70px;
+    color:rgb(100,100,100);
+    pointer-events:none;
+}
+
+#dlCSV {
+    margin-right:10px;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#dlChart {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#vizNav {
+    margin-top:30px;
+    font-family: Helvetica Neue, Arial;
+    font-weight: normal;
+    font-size: 14px;
+    font-style:italic;
+
+}
+.vizItem {
+    margin-right:30px;
+}
+#btnDiv {
+    display:none;
+    margin-top:8px;
+    margin-bottom:8px;
+}
+#btnAll {
+    position:relative;  
+    display:inline; 
+    margin-left:2px;
+    font-family: Arial;
+    font-size:11px;
+    font-weight: bold;
+    background-color: rgb(255,255,255);
+    padding:2px 7px 2px 7px;
+    border: 1px solid rgb(200,200,200);
+    border-radius:3px;
+    cursor: pointer;
+}
+#btnAll:hover {
+    background-color:rgb(250,250,250);
+}
+#btnAll:active {
+    background-color:rgb(255,255,255);
+}
+#btnNone:hover {
+    background-color:rgb(250,250,250);
+}
+#btnNone:active {
+    background-color:rgb(255,255,255);
+}
+#btnNone {
+    position:relative; 
+    display:inline; 
+    margin-left:3px;
+    font-family: Arial;
+    font-size:11px;
+    font-weight: bold;
+    background-color: rgb(255,255,255);
+    padding:2px 7px 2px 7px;
+    border: 1px solid rgb(200,200,200);
+    border-radius:3px;
+    cursor: pointer;
+}
+.container {overflow-y: scroll; display:none; font-weight:normal; position:relative;padding-right:10px;}
+form {
+    font-family: Helvetica Neue, Arial;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.regionBox, label {cursor:pointer; font-size:11px;}
+
+#chrome {
+    float:right;
+    font-family: Helvetica Neue, Arial;
+    font-weight: normal;
+    font-size: 16px;
+    font-style:normal;
+}
+
+#overlay {
+    background-color:rgba(150,150,150,.5);
+    position:absolute;
+    width:100%;
+    height:820px;
+    display:none;
+    top:0px;
+    left:0px;
+}
+
+#svg-container {
+    background-color:transparent;
+    height:515px;
+}
+.vizItem {
+    margin-right:30px;
+}
+
+#vizNav {
+    margin-top:30px;
+    font-family: Helvetica Neue, Arial;
+    font-weight: normal;
+    font-size: 14px;
+    font-style:italic;
+
+}
+#titleText99 {
+    background-color:none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 11px;
+    color: rgb(50,50,50);
+    margin-bottom:0px;
+    font-weight:300;
+    margin-top:1px;
+    display:block;
+    margin-left:25px;
+    padding:0;
+
+}
+#hoverLabel1 {
+    position:absolute;
+    font-size:10px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    left:20px;
+    top:220px;
+    color:rgb(80,80,80);
+    pointer-events:none;
+}
+
+#controltitle {
+    position:absolute;
+    margin-left:20px;
+    margin-top:30px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 20px;
+    font-weight:normal;
+}
+#indicTitle {
+    position:absolute;
+    margin-left:20px;
+    margin-top:75px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 14px;
+    font-weight:bold
+}
+#indicMenu {
+    position:absolute;
+    margin-top:100px;
+    margin-left:20px;
+    width:181px;
+
+}
+#regionTitle {
+    position:absolute;
+    margin-left:20px;
+    margin-top:140px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-size: 14px;
+    font-weight:bold
+}
+
+#lineSelector {
+    display:inline-block;
+    position:relative;
+    margin-left:20px;
+    font-family: Arial;
+    font-size:11px;
+    font-weight: bold;
+    background-color: rgb(240,240,240);
+    padding:2px 7px 2px 7px;
+    border: 1px solid rgb(200,200,200);
+    border-radius:3px;
+    cursor: default;
+    margin-top:165px;
+    z-index:9999;
+}
+</style>
+<body>
+<script src="libraries/d3.v3.min.js"></script>
+<script src="libraries/queue.v1.min.js"></script>
+<script type="text/javascript" src="libraries/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="libraries/rgbcolor.js"></script> 
+<script type="text/javascript" src="libraries/canvg.js"></script>
+<script type="text/javascript" src="libraries/svgenie.js"></script>
+<div id="topContainer">
+<div id="top">
+    <div id = "ashoka"><img src = "images/Emblem_of_India.png" height="85px"></div>
+    <div id = "textcontainer">
+    <div id="saffron"></div><div id="white"></div><div id="green"></div>
+    <img id="brush" src="images/brush_125.png" />
+    <h1 id="titleText1">MGNREGA</h1><h1 id="titleText2">Public Data Portal</h1>
+    <h1 id="titleText99"> &nbsp;Beta Version</h1>
+    </div>
+    <span id="linkNav">
+        <a href="http://nrega.nic.in/netnrega/home.aspx" class="navItem">MGNREGA Home</a><a href="http://nrega.nic.in/NregaOfficial.htm" class="navItem">Contact</a>
+    </span>
+    <a href="rural.nic.in" id="mord"><img src="images/mord-nrega-34-fullname.png"></a>
+    <a href="http://www.hks.harvard.edu/centers/cid/programs/evidence-for-policy-design" id="epod"><img src="images/evidence-for-policy-design-mod.png"></a>
+</div>
+</div>
+<div id="main">
+    <div id="vizNav">
+        <a href="map_pdp.html" class="vizItem">Map</a><a class="vizItem">Time trend</a>
+        <span id="chrome">&raquo; Works best in <b>Google Chrome</b></span>
+    </div>
+    <div id="chartcontainer">
+        <div id="chartcontrol">
+            <div id="controltitle">MGNREGA Trends</div>
+            <form autocomplete="off">
+                <div id="indicTitle">Select indicator</div>
+                <select id="indicMenu"><option selected>Percent female person-days</option><option>Percent SC person-days</option><option>Percent ST person-days</option>
+                </select>
+                <div id="regionTitle">Select regions</div>
+                <div id="lineSelector">
+                    <div id="addText">Add or remove regions</div>
+                    <div id="btnDiv"><div id="btnAll">Select all</div><div id="btnNone">Select none</div></div>
+                    <div class="container">
+                        <form autocomplete="off">
+                        <label><input type="checkbox" value="0" class="regionBox" checked /> India <br /></label>
+                        <label><input type="checkbox" value="35" class="regionBox" /> Andaman and Nicobar <br /></label>
+                        <label><input type="checkbox" value="28" class="regionBox" /> Andhra Pradesh <br /></label>
+                        <label><input type="checkbox" value="12" class="regionBox" /> Arunachal Pradesh <br /></label>
+                        <label><input type="checkbox" value="18" class="regionBox" /> Assam <br /></label>
+                        <label><input type="checkbox" value="10" class="regionBox" /> Bihar <br /></label>
+                        <label><input type="checkbox" value="4" class="regionBox" /> Chandigarh <br /></label>
+                        <label><input type="checkbox" value="22" class="regionBox" /> Chhattisgarh <br /></label>
+                        <label><input type="checkbox" value="26" class="regionBox" /> Dadra and Nagar Haveli <br /></label>
+                        <label><input type="checkbox" value="25" class="regionBox" /> Daman and Diu <br /></label>
+                        <label><input type="checkbox" value="30" class="regionBox" /> Goa <br /></label>
+                        <label><input type="checkbox" value="24" class="regionBox" /> Gujarat <br /></label>
+                        <label><input type="checkbox" value="6" class="regionBox" /> Haryana <br /></label>
+                        <label><input type="checkbox" value="2" class="regionBox" /> Himachal Pradesh <br /></label>
+                        <label><input type="checkbox" value="1" class="regionBox" /> Jammu and Kashmir <br /></label>
+                        <label><input type="checkbox" value="20" class="regionBox" /> Jharkhand <br /></label>
+                        <label><input type="checkbox" value="29" class="regionBox" /> Karnataka <br /></label>
+                        <label><input type="checkbox" value="32" class="regionBox" /> Kerala <br /></label>
+                        <label><input type="checkbox" value="31" class="regionBox" /> Lakshadweep <br /></label>
+                        <label><input type="checkbox" value="23" class="regionBox" /> Madhya Pradesh <br /></label>
+                        <label><input type="checkbox" value="27" class="regionBox" /> Maharasthra <br /></label>
+                        <label><input type="checkbox" value="14" class="regionBox" /> Manipur <br /></label>
+                        <label><input type="checkbox" value="17" class="regionBox" /> Meghalaya <br /></label>
+                        <label><input type="checkbox" value="15" class="regionBox" /> Mizoram <br /></label>
+                        <label><input type="checkbox" value="13" class="regionBox" /> Nagaland <br /></label>
+                        <label><input type="checkbox" value="21" class="regionBox" /> Odisha <br /></label>
+                        <label><input type="checkbox" value="34" class="regionBox" /> Puducherry <br /></label>
+                        <label><input type="checkbox" value="3" class="regionBox" /> Punjab <br /></label>
+                        <label><input type="checkbox" value="8" class="regionBox" /> Rajasthan <br /></label>
+                        <label><input type="checkbox" value="11" class="regionBox" /> Sikkim <br /></label>
+                        <label><input type="checkbox" value="33" class="regionBox" /> Tamil Nadu <br /></label>
+                        <label><input type="checkbox" value="16" class="regionBox" /> Tripura <br /></label>
+                        <label><input type="checkbox" value="9" class="regionBox" /> Uttar Pradesh <br /></label>
+                        <label><input type="checkbox" value="5" class="regionBox" /> Uttarakhand <br /></label>
+                        <label><input type="checkbox" value="19" class="regionBox" /> West Bengal <br /></label>
+                        </form>
+                    </div>
+                </div>
+            </form>
+            <div id="hoverLabel1">&raquo; Hover over a line or node for more info</div>
+        </div>
+        <div id="chart1">
+            <div id="controlDiv">
+                
+            </div>
+            
+            <div id="dlLinks"><span id="dlCSV">Download .csv</span><span id="dlChart">Download chart</span></div>
+            <div id="svg-container"></div>
+        </div>
+    </div> 
+</div>
+
+<div id="tooltipDiv"></div>
+<div id="overlay"></div>
+<div id="footer">
+    <div id="bottom"> 
+        <div id="niclogo"><a href="http://www.nic.in/"><img src="images/nic.png"></a></div>
+        <div id="developedby">Site designed and developed by National Informatics Center and Evidence for Policy Design at Harvard University.
+        </div>
+        <div id="dfidcontainer">Made possible with support from: 
+            <div id="dfidlogo"><a href="https://www.gov.uk/government/organisations/department-for-international-development"><img src="images/dfid-logo-wide-55.png"></a></div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+
+
+function chart(initdata) { 
+
+    var margin = {top: 60, right: 40, bottom: 45, left: 55}
+    , w = 700 - margin.left - margin.right
+    , h = 500 - margin.top - margin.bottom
+    , pct = d3.format(",.2f")
+    , lineData = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[],13:[],14:[],15:[],16:[],17:[],18:[],19:[],20:[],21:[],22:[],23:[],24:[],25:[],26:[],27:[],28:[],29:[],30:[],31:[],32:[],33:[],34:[],35:[]}
+    , monthLabels = ["4/2011", "5/2011","6/2011","7/2011","8/2011","9/2011","10/2011","11/2011","12/2011","1/2012","2/2012","3/2012","4/2012","5/2012","6/2012","7/2012","8/2012","9/2012","10/2012","11/2012","12/2012","1/2013","2/2013","3/2013","4/2013","5/2013","6/2013","7/2013","8/2013"]
+    , months = ["042011", "052011", "062011", "072011", "082011", "092011", "102011", "112011", "122011", "012012", "022012", "032012", "042012", "052012", "062012", "072012", "082012", "092012", "102012", "112012", "122012", "012013", "022013", "032013", "042013", "052013", "062013", "072013", "082013"]
+    , stateNames = {35: "Andaman and Nicobar", 28: "Andhra Pradesh", 12: "Arunachal Pradesh", 18: "Assam", 10: "Bihar", 4: "Chandigarh", 22: "Chhattisgarh", 26: "Dadra and Nagar Haveli", 25: "Daman and Diu", 7: "Delhi", 30: "Goa", 24: "Gujarat", 6: "Haryana", 2: "Himachal Pradesh", 1: "Jammu and Kashmir", 20: "Jharkhand", 29: "Karnataka", 32: "Kerala", 31: "Lakshadweep", 23: "Madhya Pradesh", 27: "Maharashtra", 14: "Manipur", 17: "Meghalaya", 15: "Mizoram", 13: "Nagaland", 21: "Odisha", 34: "Puducherry", 3: "Punjab", 8: "Rajasthan", 11: "Sikkim", 33: "Tamil Nadu", 16: "Tripura", 9: "Uttar Pradesh", 5: "Uttarakhand", 19: "West Bengal", 0:"India"}
+    , stateAbbrevs = {0:"IND",35: "AN", 28: "AP", 12: "AR", 18: "AS", 10: "BH", 4: "CH", 22: "CT", 26: "DN", 25: "DD", 7: "DL", 30: "GA", 24: "GJ", 6: "HR", 2: "HP", 1: "JK", 20: "JH", 29: "KA", 32: "KL", 31: "LD", 23: "MP", 27: "MH", 14: "MN", 17: "ML", 15: "MZ", 13: "NL", 21: "OR", 34: "PY", 3: "PB", 8: "RJ", 11: "SK", 33: "TN", 16: "TR", 9: "UP", 5: "UT", 19: "WB"}
+    , indicObj = {}
+    , indicName = $("#indicMenu option:selected").text()
+    , fileLookup = {'Person-days generated':'data/state_MW_pd.csv', 'Person-days per rural household': 'data/state_MW_pdruralhh.csv', 'Households worked': 'data/state_MW_hh.csv', 'Percent female person-days': 'data/state_MW_female.csv', 'Percent SC person-days': 'data/state_MW_sc.csv', 'Percent ST person-days': 'data/state_MW_st.csv'}
+    , varstubLookup = {'Person-days generated':'persondays','Person-days per rural household': 'persondaysruralhh', 'Households worked':'householdsprovidedwork', 'Percent female person-days': 'pctfemalepersondays', 'Percent SC person-days': 'pctscpersondays', 'Percent ST person-days': 'pctstpersondays'};
+
+    indicObj[indicName]=initdata;
+    indicObj[indicName].forEach(function(d,i) {
+        var id = +d.ccode;
+        months.forEach(function(e) {
+            lineData[id].push(d[varstubLookup[indicName]+e]);
+        });
+        lineData[id].forEach(function(e,i) {
+            e==="" ? lineData[id][i]=null : lineData[id][i]= +e;
+        });
+    });
+
+    var max = 0;
+    d3.selectAll(".regionBox")[0].forEach(function(d,i) {
+        var id = d.value;
+        if (d.checked==true) {
+            lineData[id].forEach(function(e,i) {
+                if (e>max) max=e;
+            });
+        }
+    });
+    d3.select("#svg-container").append("svg:svg")
+    .attr("width", w + margin.left + margin.right)
+    .attr("height", h + margin.top + margin.bottom)
+    .attr("id", "chart-svg")
+    .style("font", "12px sans-serif")
+    .append("rect").attr("x",0).attr("y",0).attr("width", w + margin.left + margin.right).attr("height", h + margin.top + margin.bottom).style("fill","rgb(250,250,250)");
+
+    var chart1svg = d3.select("#chart-svg")
+    .append("svg:g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+    var x = d3.scale.linear().domain([0, lineData[1].length-1]).range([0, w]);
+    var y = d3.scale.linear().clamp(true).domain([0, max*1.1]).range([h, 0]);
+    var line = d3.svg.line().defined(function(d) { return d !== null; }).x(function(d,i) { return x(i); }).y(function(d) { return y(d); });
+
+    var yAxisLeft = d3.svg.axis()
+        .scale(y).ticks(10)
+        .orient("left")
+        .tickSize(-w)
+        .tickPadding(7)
+        .tickFormat(function(d) { return d});
+
+    var g = chart1svg.append("svg:g")
+        .attr("class", "y axis")
+        .style("font-size", "12px")
+        .call(yAxisLeft)
+        .style("shape-rendering", "crispEdges");
+
+    g.append("text")
+        .attr("class", "caption")
+        .attr("x", -25)
+        .attr("y", -13)
+        .style("font-size","14px")
+        .style("text-anchor", "left")
+        .style("font-weight","bold")
+        .text(indicName);
+
+    var extraLine = g.append("svg:line")
+        .attr("x1", function() {return x(0);})
+        .attr("x2", function() {return x(28);})
+        .attr("y1", function() {return y(100);})
+        .attr("y2", function() {return y(100);})
+        .attr("id", "extraLine");
+
+    d3.selectAll(".y.axis path").style("display","none").style("stroke","lightgrey").style("stroke-width","1px");
+    d3.selectAll(".y.axis line").style("stroke","lightgrey").style("stroke-width","1px");
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .tickSize(-h)
+        .tickValues([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28])
+        .tickFormat(function(d, i) {
+            if (i%4===0) return monthLabels[i];
+        })
+        .tickPadding(15);
+
+    var xAxisNodes = chart1svg.append("svg:g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + h + ")")
+          .style("shape-rendering", "crispEdges")
+          .style("font-size", "12px")
+          .call(xAxis);
+
+    d3.selectAll(".x.axis path").style("display","none");
+
+    xAxisNodes.selectAll("text").style("font-weight",function(d,i) {
+        if (monthLabels[d]==="4/2011" || monthLabels[d]==="4/2012" || monthLabels[d]==="4/2013") return "bold";
+    });
+
+    xAxisNodes.selectAll("g.tick.major").selectAll("line")
+        .style("stroke", function(d,i) {
+            if (monthLabels[d]==="4/2011" || monthLabels[d]==="4/2012" || monthLabels[d]==="4/2013") return "black"; else return "rgb(150,150,150)";
+        });
+
+    xAxisNodes.selectAll("line.tick.minor").style("stroke","lightgrey").style("stroke-width","1px");
+
+    var minText = chart1svg.append("text")
+        .attr("x", -21)
+        .attr("y", function() {
+            return y(33)+3;
+        })
+        .text("33")
+        .attr("id", "minText")
+        .style("text-anchor", "left")
+        .style("color", "black")
+        .style("font-weight", "normal")
+        .style("font-size", "12px")
+        .style("shape-rendering", "crispEdges");
+
+    var keys = Object.keys(lineData);
+    keys.forEach(function(d) {
+        var id = +d;
+        chart1svg.append("svg:path").attr("d", line(lineData[id]))
+            .attr("data-title", function(e,i) { return "<b>"+stateNames[id]+"</b>"})
+            .attr("class","line")
+            .attr("id",id)
+            .data([id])
+            .style("fill","none")
+            .style("stroke-width","2px")
+            .style("display",function(d,i) { return d===0 ? "inline" : "none";})
+            .style("stroke",function(d,i) { return d===0 ? "black" : "steelblue"})
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+    });
+
+    keys.forEach(function(d) {
+        var id = +d;
+        chart1svg.append("g").attr("class", "gDots").selectAll("circle").data(lineData[id]).enter().append("circle")
+            .attr("cx", function(d,i) { if (d!==null) return x(i); })
+            .attr("cy", function(d,i) { if (d!==null) return y(d); })
+            .attr("r", 3)
+            .attr("class","dot")
+            .attr("id",id)
+            .style("fill", function(d,i) { return d!==null ? "rgb(150,150,150)" : "none"; })
+            .style("display",function(d,i) { return id===0 ? "inline" : "none"; })
+            .attr("data-title" ,function(d,i) {
+                return "<b>"+stateNames[id]+"</b><br>"+indicName+" ("+monthLabels[i]+"): "+pct(d)+"%";})
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+    });
+    var minLine = chart1svg.append("svg:line")
+        .attr("x1", function() {return x(0);})
+        .attr("x2", function() {return x(28);})
+        .attr("y1", function() {return y(33.33);})
+        .attr("y2", function() {return y(33.33);})
+        .attr("id", "minLine")
+        .style("stroke", "red")
+        .style("stroke-width", "1.5px")
+        .style("stroke-dasharray", "4 2");
+
+    keys.forEach(function(d,i) { 
+        var id = +d;
+        var skip=true;
+        lineData[id].forEach(function(d,i) { if (d!==null && d!==undefined) skip=false; });
+        if (lineData[id][28]!==undefined && skip===false) {
+            chart1svg.append("text")
+                .attr("x", function() { return x(28)+8; })
+                .attr("y", function() {
+                    if (lineData[id][28]!==null) {
+                        return y(lineData[id][28])+5;
+                    }
+                    else {
+                        var lastY;
+                        lineData[id].forEach(function(d,i) {
+                            if (d!==null && d!==undefined) lastY=d;
+                        });
+                        if (lastY!==undefined) return y(lastY)+5;
+                    }
+                })
+                .attr("id",id)
+                .attr("class", "label")
+                .text(stateAbbrevs[id])
+                .style("text-anchor", "left")
+                .style("color", "black")
+                .style("font-weight", "bold")
+                .style("font-size", "11px")
+                .style("display",function(d,i) {
+                    return id===0 ? "inline" : "none";
+                });
+        }
+    });
+
+    function refreshLines() {
+        d3.selectAll(".regionBox")[0].forEach(function(d,i) {
+            var id = d.value;
+            d.checked===true ? d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","inline") : d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","none");
+        });
+        d3.selectAll(".line").attr("d", function(d,i) { return line(lineData[d]); });
+        d3.selectAll(".dot").attr("cy", function(d,i) { if (d!==null) return y(d); });
+        d3.selectAll(".label").attr("y", function() {
+            var id = d3.select(this).attr("id");
+            if (lineData[id][28]!==null) {
+                return y(lineData[id][28])+5;
+            }
+            else {
+                var lastY;
+                lineData[id].forEach(function(d,i) {
+                    if (d!==null && d!==undefined) lastY=d;
+                });
+                if (lastY!==undefined) return y(lastY)+5;
+            }
+        });
+        minLine.attr("y1", function() {return y(33.33);}).attr("y2", function() {return y(33.33);});
+        minText.attr("y", function() {return y(33)+3;});
+    }
+
+    function refreshScale() {
+        var max = 0;
+        d3.selectAll(".regionBox")[0].forEach(function(d,i) {
+            var id = d.value;
+            if (d.checked==true) {
+                lineData[id].forEach(function(e,i) {
+                    if (e>max) max=e;
+                });
+            }
+        });
+        if (indicName!=='Person-days per rural household') {
+            if (max>=90 && max<=100) {
+                y.domain([0,100])
+            }
+            else {
+                y.domain([0,max*1.1])
+            }
+        }
+        else {
+            y.domain([0,max*1.1])
+        }
+        g.call(yAxisLeft);
+        d3.selectAll(".y.axis path").style("display","none").style("stroke","lightgrey").style("stroke-width","1px");
+        d3.selectAll(".y.axis line").style("stroke","lightgrey").style("stroke-width","1px");
+    }
+
+    // handlers
+    $('#indicMenu').change(function() {
+        indicName = $("#indicMenu option:selected").text();
+        lineData = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[],9:[],10:[],11:[],12:[],13:[],14:[],15:[],16:[],17:[],18:[],19:[],20:[],21:[],22:[],23:[],24:[],25:[],26:[],27:[],28:[],29:[],30:[],31:[],32:[],33:[],34:[],35:[]};
+        if (!indicObj[indicName]) {
+            d3.csv(fileLookup[indicName], function(error,data) {
+                indicObj[indicName] = data;
+                updateChart();
+            });
+        }
+        else {
+            updateChart();
+        }
+    });
+
+    d3.select("#dlCSV").on("click", function() {
+        var dlArray = [['state_id','state', 'month', 'year', indicName]];
+
+        indicObj[indicName].forEach(function(d,i) {
+            var keys = Object.keys(d)
+            keys.forEach(function(e) {
+                if (e!=="state" && e!=="ccode") {
+                    var month = e.substr(e.length-6,2)
+                    var year = e.substr(e.length-4,4)
+                    dlArray.push([d.ccode, d.state, month, year, d[e]])
+                }
+            });
+
+        });
+
+        var dlString = Arrays2CSVString(dlArray);
+        $("#dlCSV").append('<form id="exportform" action="export.php" method="post" target="_blank"><input type="hidden" id="exportdata" name="exportdata" /></form>');
+        $("#exportdata").val(dlString);
+        $("#exportform").submit().remove();
+
+    });
+
+    d3.selectAll(".regionBox").on("click", function() {
+        var id = this.value;
+        refreshScale();
+        d3.selectAll(".line").attr("d", function(d,i) { return line(lineData[d]) });
+        d3.selectAll(".dot").attr("cy", function(d,i) { if (d!==null) return y(d); });
+        d3.selectAll(".label").attr("y", function() {
+            var id = d3.select(this).attr("id");
+            if (lineData[id][28]!==null) {
+                return y(lineData[id][28])+5;
+            }
+            else {
+                var lastY;
+                lineData[id].forEach(function(d,i) {
+                    if (d!==null && d!==undefined) lastY=d;
+                });
+                if (lastY!==undefined) return y(lastY)+5;
+            }
+        });
+        minLine.attr("y1", function() {return y(33.33);}).attr("y2", function() {return y(33.33);});
+        minText.attr("y", function() {return y(33)+3;});
+        this.checked===true ? d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","inline") : d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","none");
+    });
+
+    d3.select("#btnAll").on("click", function() {
+        d3.selectAll(".regionBox")[0].forEach(function(d,i) {
+            d.checked=true;
+            var id = d.value;
+            d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","inline");
+        });
+        refreshScale();
+        d3.selectAll(".line").attr("d", function(d,i) { return line(lineData[d]) });
+        minLine.attr("y1", function() {return y(33.33);}).attr("y2", function() {return y(33.33);});
+        minText.attr("y", function() {return y(33)+3;});
+        d3.selectAll(".dot").attr("cy", function(d,i) { if (d!==null) return y(d); });
+        d3.selectAll(".label").attr("y", function() {
+            var id = d3.select(this).attr("id");
+            if (lineData[id][28]!==null) {
+                return y(lineData[id][28])+5;
+            }
+            else {
+                var lastY;
+                lineData[id].forEach(function(d,i) {
+                    if (d!==null && d!==undefined) lastY=d;
+                });
+                if (lastY!==undefined) return y(lastY)+5;
+            }
+        });
+    });
+
+    d3.select("#btnNone").on("click", function() {
+        d3.selectAll(".regionBox")[0].forEach(function(d,i) {
+            d.checked=false;
+            var id = d.value;
+            d3.selectAll("path, .dot, text").filter(function(d,i) { return d3.select(this).attr("id")===id }).style("display","none");
+        });
+    });
+
+    function updateChart() {
+        d3.selectAll("#minLine, #minText").style("display", function() { return indicName==="Percent female person-days" ? "inline" : "none"});
+        indicObj[indicName].forEach(function(d,i) {
+            var id = +d.ccode
+            months.forEach(function(e) {
+                lineData[id].push(d[varstubLookup[indicName]+e])
+            })
+
+            lineData[id].forEach(function(e,i) {
+                e==="" ? lineData[id][i]=null : lineData[id][i]= +e;
+            });
+
+        });
+
+        refreshScale();
+
+        chart1svg.selectAll(".line, .label").remove();
+        d3.selectAll(".gDots").remove();
+        var keys = Object.keys(lineData);
+        keys.forEach(function(d) {
+            var id = +d;
+            chart1svg.append("svg:path").attr("d", line(lineData[id]))
+                .attr("data-title", function(e,i) { return "<b>"+stateNames[id]+"</b>"})
+                .attr("class","line")
+                .attr("id",id)
+                .data([id])
+                .style("fill","none")
+                .style("stroke-width","2px")
+                .style("display",function(d,i) { return d===0 ? "inline" : "none";})
+                .style("stroke",function(d,i) { return d===0 ? "black" : "steelblue"})
+                .on("mouseover", mouseover)
+                .on("mouseout", mouseout);
+        });
+        keys.forEach(function(d) {
+            var id = +d;
+            chart1svg.append("g").attr("class","gDots").selectAll("circle").data(lineData[id]).enter().append("circle")
+                .attr("cx", function(d,i) { if (d!==null) return x(i); })
+                .attr("cy", function(d,i) { if (d!==null) return y(d); })
+                .attr("r", 3)
+                .attr("class","dot")
+                .attr("id",id)
+                .style("fill", function(d,i) { return d!==null ? "rgb(150,150,150)" : "none"; })
+                .style("display",function(d,i) { return id===0 ? "inline" : "none"; })
+                .attr("data-title" ,function(d,i) {
+                    return "<b>"+stateNames[id]+"</b><br>"+indicName+" ("+monthLabels[i]+"): "+pct(d)+"%";})
+                .on("mouseover", mouseover)
+                .on("mouseout", mouseout);
+        });
+        keys.forEach(function(d,i) { 
+            var id = +d
+            var skip=true;
+            lineData[id].forEach(function(d,i) { if (d!==null && d!==undefined) skip=false; });
+            if (lineData[id][28]!==undefined && skip===false) {
+                chart1svg.append("text")
+                    .attr("x", function() { return x(28)+8; })
+                    .attr("y", function() {
+                        if (lineData[id][28]!==null) {
+                            return y(lineData[id][28])+5;
+                        }
+                        else {
+                            var lastY;
+                            lineData[id].forEach(function(d,i) {
+                                if (d!==null && d!==undefined) lastY=d;
+                            });
+                            if (lastY!==undefined) return y(lastY)+5;
+                        }
+                    })
+                    .attr("id",id)
+                    .attr("class", "label")
+                    .text(stateAbbrevs[id])
+                    .style("text-anchor", "left")
+                    .style("color", "black")
+                    .style("font-weight", "bold")
+                    .style("font-size", "11px")
+                    .style("display",function(d,i) {
+                        return id===0 ? "inline" : "none";
+                    });
+            }
+        });
+
+        d3.select(".caption").text(indicName);
+        refreshLines();
+    }
+
+    // tooltip functions
+    function mouseover() {
+        thisTitle = d3.select(this).attr("data-title");
+        d3.select("#tooltipDiv")
+        .html(thisTitle)
+        .style("opacity",0)
+        .style("display","block")
+        .style("left", d3.mouse(d3.select("body")[0][0])[0]+"px")
+        .style("top",d3.mouse(d3.select("body")[0][0])[1]+30+"px")
+        .transition()
+        .style("opacity",1).duration(200);
+        var id = d3.select(this).attr("id");
+        d3.select(this).attr("r", 6);
+        if (d3.select(this).attr("class")==="dot") {
+            d3.select(this).style("fill","red");
+            chart1svg.selectAll(".line").sort(function (a, b) { // select the parent and sort the path's
+                if (a !== +id) return -1;             // a is not the hovered element, send "a" to the back
+                else { return 1; }                            // a is the hovered element, bring "a" to the front
+            });
+            d3.selectAll("path").filter(function(d,i) {
+                return d3.select(this).attr("id")===id;
+            }).style("stroke","black").style("stroke-width","3px");
+        }
+        if (d3.select(this).attr("class")==="line") {
+            chart1svg.selectAll(".line").sort(function (a, b) { // select the parent and sort the path's
+                if (a !== +id) return -1;             // a is not the hovered element, send "a" to the back
+                else { return 1; }                            // a is the hovered element, bring "a" to the front
+            });
+            d3.select(this).style("stroke-width", "3px");
+            d3.select(this).style("stroke", "black");
+        }
+    }
+    function mouseout() {
+        d3.select("#tooltipDiv").style("display","none");
+        d3.select(this).attr("r", 3);
+        var id = d3.select(this).attr("id");
+        if (d3.select(this).attr("class")==="dot") {
+            d3.select(this).style("fill","rgb(150,150,150");
+            d3.selectAll("path").filter(function(d,i) { return d3.select(this).attr("id")===id; })
+            .style("stroke",function(d,i) { if (d!==0) return "steelblue"; else return "black"}).style("stroke-width","2px");
+        }
+        if (d3.select(this).attr("class")==="line") {
+            d3.select(this).style("stroke-width", "2px");
+            if (id!=="0") d3.select(this).style("stroke", "steelblue");
+        }
+    }
+}
+
+
+queue()
+    .defer(d3.csv, "data/state_MW_female.csv")
+    .await(ready);
+
+
+function ready(error, monthwise) {
+    chart(monthwise);
+}
+
+
+d3.select("#lineSelector")
+    .on("mouseover", function() {
+        d3.select("#addText").style("display","none");
+        d3.select(".container").style("display","block");
+        d3.select("#btnDiv").style("display","inline-block");
+        d3.select(".container").style("height","200px");
+    })
+    .on("mouseout", function() {
+        d3.select("#addText").style("display","inline-block");
+        d3.select(".container").style("display","none");
+        d3.select("#btnDiv").style("display","none");
+    });
+
+
+
+
+function Arrays2CSVString(objArray) {
+   var array = objArray;
+   var str = '';
+   for (var i = 0; i < array.length; i++) {
+       var line = '';
+       for (var index in array[i]) {
+           line += array[i][index] + ',';
+       }
+       line.slice(0,line.Length-1); 
+       str += line + '\r\n';
+   }
+   return str;
+}
+
+d3.select('#dlChart').on('click', function() {
+    svgenie.save( "chart-svg", {
+        name : "nregatrend.png"
+    });
+
+});
+
+
+</script>
+
